@@ -1,0 +1,13 @@
+{
+  "name": "OOPS_Javascript",
+  "version": "1.0.0",
+  "description": "OOPS concepts in Javascript",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
+}
