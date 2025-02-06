@@ -1,6 +1,6 @@
 # LearningHub
 
-## OOPS Concepts in C# and Javascript
+## OOPS Concepts in C#, Javascript, Python, and Java
 
 ### Overview of Core OOPS Concepts
 
@@ -317,3 +317,313 @@ const payment2 = new PayPalPayment();
 payment1.processPayment();
 payment2.processPayment();
 ```
+
+### OOPS Concepts in Python
+
+#### Encapsulation
+
+Encapsulation in Python can be achieved using classes and private variables to hide the internal implementation details.
+
+**Example:**
+
+```python
+class Person:
+    def __init__(self, name, age):
+        self.__name = name
+        self.__age = age
+
+    def get_name(self):
+        return self.__name
+
+    def set_name(self, name):
+        self.__name = name
+
+    def get_age(self):
+        return self.__age
+
+    def set_age(self, age):
+        self.__age = age
+
+person = Person("John", 30)
+print(f"Name: {person.get_name()}, Age: {person.get_age()}")
+```
+
+#### Inheritance
+
+Inheritance in Python can be achieved using classes to create a hierarchical relationship between classes.
+
+**Example:**
+
+```python
+class Vehicle:
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
+
+    def start_engine(self):
+        print("Engine started.")
+
+class Car(Vehicle):
+    def __init__(self, make, model, number_of_doors):
+        super().__init__(make, model)
+        self.number_of_doors = number_of_doors
+
+    def honk(self):
+        print("Car honking.")
+
+car = Car("Toyota", "Camry", 4)
+car.start_engine()
+car.honk()
+print(f"Make: {car.make}, Model: {car.model}, Number of Doors: {car.number_of_doors}")
+```
+
+#### Polymorphism
+
+Polymorphism in Python can be achieved through method overriding and method overloading.
+
+**Example:**
+
+```python
+class Shape:
+    def draw(self):
+        print("Drawing a shape.")
+
+class Circle(Shape):
+    def draw(self):
+        print("Drawing a circle.")
+
+class Square(Shape):
+    def draw(self):
+        print("Drawing a square.")
+
+shape1 = Circle()
+shape2 = Square()
+
+shape1.draw()
+shape2.draw()
+```
+
+#### Abstraction
+
+Abstraction in Python can be achieved by defining abstract classes and implementing them in concrete classes.
+
+**Example:**
+
+```python
+from abc import ABC, abstractmethod
+
+class Payment(ABC):
+    @abstractmethod
+    def process_payment(self):
+        pass
+
+class CreditCardPayment(Payment):
+    def process_payment(self):
+        print("Processing credit card payment.")
+
+class PayPalPayment(Payment):
+    def process_payment(self):
+        print("Processing PayPal payment.")
+
+payment1 = CreditCardPayment()
+payment2 = PayPalPayment()
+
+payment1.process_payment()
+payment2.process_payment()
+```
+
+### OOPS Concepts in Java
+
+#### Encapsulation
+
+Encapsulation in Java can be achieved using classes and private variables to hide the internal implementation details.
+
+**Example:**
+
+```java
+public class Person {
+    private String name;
+    private int age;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public static void main(String[] args) {
+        Person person = new Person();
+        person.setName("John");
+        person.setAge(30);
+
+        System.out.println("Name: " + person.getName() + ", Age: " + person.getAge());
+    }
+}
+```
+
+#### Inheritance
+
+Inheritance in Java can be achieved using classes to create a hierarchical relationship between classes.
+
+**Example:**
+
+```java
+public class Vehicle {
+    private String make;
+    private String model;
+
+    public String getMake() {
+        return make;
+    }
+
+    public void setMake(String make) {
+        this.make = make;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void startEngine() {
+        System.out.println("Engine started.");
+    }
+}
+
+public class Car extends Vehicle {
+    private int numberOfDoors;
+
+    public int getNumberOfDoors() {
+        return numberOfDoors;
+    }
+
+    public void setNumberOfDoors(int numberOfDoors) {
+        this.numberOfDoors = numberOfDoors;
+    }
+
+    public void honk() {
+        System.out.println("Car honking.");
+    }
+
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.setMake("Toyota");
+        car.setModel("Camry");
+        car.setNumberOfDoors(4);
+
+        car.startEngine();
+        car.honk();
+
+        System.out.println("Make: " + car.getMake() + ", Model: " + car.getModel() + ", Number of Doors: " + car.getNumberOfDoors());
+    }
+}
+```
+
+#### Polymorphism
+
+Polymorphism in Java can be achieved through method overriding and method overloading.
+
+**Example:**
+
+```java
+public class Shape {
+    public void draw() {
+        System.out.println("Drawing a shape.");
+    }
+}
+
+public class Circle extends Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a circle.");
+    }
+}
+
+public class Square extends Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a square.");
+    }
+
+    public static void main(String[] args) {
+        Shape shape1 = new Circle();
+        Shape shape2 = new Square();
+
+        shape1.draw();
+        shape2.draw();
+    }
+}
+```
+
+#### Abstraction
+
+Abstraction in Java can be achieved by defining abstract classes and implementing them in concrete classes.
+
+**Example:**
+
+```java
+public abstract class Payment {
+    public abstract void processPayment();
+}
+
+public class CreditCardPayment extends Payment {
+    @Override
+    public void processPayment() {
+        System.out.println("Processing credit card payment.");
+    }
+}
+
+public class PayPalPayment extends Payment {
+    @Override
+    public void processPayment() {
+        System.out.println("Processing PayPal payment.");
+    }
+
+    public static void main(String[] args) {
+        Payment payment1 = new CreditCardPayment();
+        Payment payment2 = new PayPalPayment();
+
+        payment1.processPayment();
+        payment2.processPayment();
+    }
+}
+```
+
+### Links to OOPS Concepts in Different Languages
+
+* [OOPS Concepts in C#](OOPS_Concepts/CSharp)
+  * [Encapsulation](OOPS_Concepts/CSharp/Encapsulation.cs)
+  * [Inheritance](OOPS_Concepts/CSharp/Inheritance.cs)
+  * [Polymorphism](OOPS_Concepts/CSharp/Polymorphism.cs)
+  * [Abstraction](OOPS_Concepts/CSharp/Abstraction.cs)
+
+* [OOPS Concepts in Javascript](OOPS_Concepts/Javascript)
+  * [Encapsulation](OOPS_Concepts/Javascript/Encapsulation.js)
+  * [Inheritance](OOPS_Concepts/Javascript/Inheritance.js)
+  * [Polymorphism](OOPS_Concepts/Javascript/Polymorphism.js)
+  * [Abstraction](OOPS_Concepts/Javascript/Abstraction.js)
+
+* [OOPS Concepts in Python](OOPS_Concepts/Python)
+  * [Encapsulation](OOPS_Concepts/Python/Encapsulation.py)
+  * [Inheritance](OOPS_Concepts/Python/Inheritance.py)
+  * [Polymorphism](OOPS_Concepts/Python/Polymorphism.py)
+  * [Abstraction](OOPS_Concepts/Python/Abstraction.py)
+
+* [OOPS Concepts in Java](OOPS_Concepts/Java)
+  * [Encapsulation](OOPS_Concepts/Java/Encapsulation.java)
+  * [Inheritance](OOPS_Concepts/Java/Inheritance.java)
+  * [Polymorphism](OOPS_Concepts/Java/Polymorphism.java)
+  * [Abstraction](OOPS_Concepts/Java/Abstraction.java)
