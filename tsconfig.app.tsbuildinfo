@@ -1,1 +1,0 @@
-{"root":["./src/App.tsx","./src/main.tsx","./src/components/Editor.tsx","./src/components/PdfGenerator.tsx","./src/components/Preview.tsx","./src/hooks/useTheme.ts","./src/types/file-saver.d.ts","./src/utils/markdownPdf.ts"],"errors":true,"version":"5.9.3"}
